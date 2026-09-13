@@ -55,7 +55,7 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
         </div>
       </div>
 
-      <div className="p-5">
+      <div className="p-4 sm:p-5">
         <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-700">{vehicle.brand}</p>
         <h2 className="mt-2 text-xl font-bold tracking-tight text-brand-950">{vehicle.model}</h2>
         {vehicle.version && <p className="mt-1 truncate text-sm text-slate-500">{vehicle.version}</p>}
@@ -70,7 +70,7 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
         </dl>
 
         <Link
-          className="mt-5 flex w-full items-center justify-center rounded-xl bg-brand-800 px-5 py-3 text-sm font-bold text-white transition hover:bg-brand-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-800"
+          className="mt-5 flex min-h-12 w-full items-center justify-center rounded-xl bg-brand-800 px-5 py-3 text-sm font-bold text-white transition hover:bg-brand-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-800"
           to={`/veiculos/${vehicle._id}`}
         >
           Ver detalhes

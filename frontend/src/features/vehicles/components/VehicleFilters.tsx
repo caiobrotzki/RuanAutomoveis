@@ -13,7 +13,7 @@ const inputClassName = 'w-full rounded-xl border border-slate-300 bg-white px-3 
 
 export function VehicleFilters({ filters, activeFilterCount, onChange, onClear }: VehicleFiltersProps) {
   return <aside className="rounded-2xl border border-brand-100 bg-white p-5 shadow-sm lg:sticky lg:top-24">
-    <div className="flex items-center justify-between gap-3"><div><p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-600">Refine sua busca</p><h2 className="mt-1 text-xl font-black text-brand-950">Filtros</h2></div>{activeFilterCount > 0 && <button className="text-sm font-bold text-brand-700 hover:text-brand-950" onClick={onClear} type="button">Limpar ({activeFilterCount})</button>}</div>
+    <div className="flex items-center justify-between gap-3"><h2 className="text-xl font-black text-brand-950">Filtros</h2>{activeFilterCount > 0 && <button className="text-sm font-bold text-brand-700 hover:text-brand-950" onClick={onClear} type="button">Limpar ({activeFilterCount})</button>}</div>
     <div className="mt-6 space-y-5">
       <SearchBar onChange={(value) => onChange('search', value)} value={filters.search ?? ''} />
       <label className="block"><span className="mb-2 block text-sm font-bold text-brand-950">Marca</span><input className={inputClassName} defaultValue={filters.brand ?? ''} key={filters.brand ?? 'brand-empty'} onBlur={(event) => onChange('brand', event.target.value)} placeholder="Ex.: Toyota" /></label>

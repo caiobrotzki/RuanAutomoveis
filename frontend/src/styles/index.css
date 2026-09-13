@@ -24,6 +24,44 @@
     scroll-behavior: smooth;
   }
 
+  @media (forced-colors: none) {
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-brand-400) var(--color-ivory-100);
+    }
+
+    @supports selector(::-webkit-scrollbar) {
+      * {
+        scrollbar-width: auto;
+        scrollbar-color: auto;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+
+      ::-webkit-scrollbar-track,
+      ::-webkit-scrollbar-corner {
+        background: var(--color-ivory-100);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        border: 2px solid var(--color-ivory-100);
+        border-radius: 999px;
+        background: var(--color-brand-400);
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-brand-600);
+      }
+
+      ::-webkit-scrollbar-thumb:active {
+        background: var(--color-brand-800);
+      }
+    }
+  }
+
   body {
     margin: 0;
     min-width: 320px;
