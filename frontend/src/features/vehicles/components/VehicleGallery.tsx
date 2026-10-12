@@ -10,7 +10,7 @@ export function VehicleGallery({ images, vehicleName }: VehicleGalleryProps) {
 
   if (!selectedImage) {
     return (
-      <div className="grid aspect-[4/3] place-items-center rounded-3xl bg-gradient-to-br from-brand-100 to-brand-200 text-brand-700">
+      <div className="grid aspect-[4/3] place-items-center bg-brand-100 text-brand-700">
         <div className="text-center">
           <span aria-hidden="true" className="text-5xl">🚘</span>
           <p className="mt-3 text-sm font-semibold">Imagens em breve</p>
@@ -21,10 +21,10 @@ export function VehicleGallery({ images, vehicleName }: VehicleGalleryProps) {
 
   return (
     <div>
-      <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-brand-100">
+      <div className="relative isolate aspect-[4/3] overflow-hidden bg-brand-100">
         <img
           alt={`${vehicleName} — imagem selecionada`}
-          className="size-full object-cover"
+          className="block size-full border-0 object-cover"
           onError={(event) => {
             event.currentTarget.hidden = true;
           }}
@@ -33,12 +33,12 @@ export function VehicleGallery({ images, vehicleName }: VehicleGalleryProps) {
       </div>
 
       {images.length > 1 && (
-        <div className="mt-4 grid grid-cols-4 gap-3 sm:grid-cols-5">
+        <div className="mt-3 grid grid-cols-4 gap-3 sm:grid-cols-5">
           {images.map((image, index) => (
             <button
               aria-label={`Visualizar imagem ${index + 1} de ${vehicleName}`}
-              className={`aspect-square overflow-hidden rounded-xl border-2 bg-brand-100 transition ${
-                image === selectedImage ? 'border-brand-600 ring-2 ring-brand-200' : 'border-transparent hover:border-brand-300'
+              className={`aspect-square overflow-hidden border bg-brand-100 transition ${
+                image === selectedImage ? 'border-brand-700' : 'border-brand-100 hover:border-brand-400'
               }`}
               key={`${image}-${index}`}
               onClick={() => setSelectedImage(image)}

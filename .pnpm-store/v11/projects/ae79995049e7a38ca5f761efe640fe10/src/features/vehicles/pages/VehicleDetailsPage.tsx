@@ -19,7 +19,7 @@ interface DetailItemProps {
 
 function DetailItem({ label, value }: DetailItemProps) {
   return (
-    <div className="rounded-2xl bg-brand-50 p-4">
+    <div className="border-t border-brand-100 py-4">
       <dt className="text-xs font-bold uppercase tracking-wider text-brand-500">{label}</dt>
       <dd className="mt-1 font-bold text-brand-950">{value}</dd>
     </div>
@@ -28,13 +28,13 @@ function DetailItem({ label, value }: DetailItemProps) {
 
 function DetailsLoading() {
   return (
-    <main className="mx-auto grid max-w-7xl gap-10 px-5 py-10 sm:px-8 lg:grid-cols-[1.35fr_0.85fr] lg:py-16">
-      <div className="aspect-[4/3] animate-pulse rounded-3xl bg-brand-100" />
+    <main className="mx-auto grid max-w-[90rem] gap-10 px-5 py-10 sm:px-8 lg:grid-cols-[1.45fr_0.75fr] lg:py-16">
+      <div className="aspect-[4/3] animate-pulse bg-brand-100" />
       <div className="space-y-5">
         <div className="h-4 w-28 animate-pulse rounded bg-brand-100" />
         <div className="h-12 w-4/5 animate-pulse rounded bg-brand-100" />
         <div className="h-8 w-2/5 animate-pulse rounded bg-brand-100" />
-        <div className="h-56 animate-pulse rounded-3xl bg-brand-50" />
+        <div className="h-56 animate-pulse bg-brand-50" />
       </div>
     </main>
   );
@@ -63,31 +63,31 @@ export function VehicleDetailsPage() {
 
   return (
     <main className="bg-ivory-50">
-      <div className="mx-auto max-w-7xl px-5 py-8 sm:px-8 lg:py-14">
-        <Link className="inline-flex items-center gap-2 text-sm font-semibold text-brand-700 hover:text-brand-950" to="/estoque">
+      <div className="mx-auto max-w-[90rem] px-5 py-8 sm:px-8 lg:py-16">
+        <Link className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-brand-600 hover:text-brand-950" to="/estoque">
           <span aria-hidden="true">←</span> Voltar para o estoque
         </Link>
 
-        <div className="mt-7 grid gap-10 lg:grid-cols-[1.35fr_0.85fr] lg:items-start">
+        <div className="mt-8 grid gap-10 lg:grid-cols-[1.45fr_0.75fr] lg:items-start lg:gap-14">
           <VehicleGallery images={vehicle.images} vehicleName={vehicleName} />
 
-          <aside className="lg:sticky lg:top-6">
-            <div className="rounded-3xl border border-brand-100 bg-white p-6 shadow-sm sm:p-8">
+          <aside className="lg:sticky lg:top-28">
+            <div className="border-t border-brand-200 bg-white py-7 sm:p-8 lg:border-l lg:border-t-0 lg:py-2 lg:pl-10 lg:pr-0">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="rounded-full bg-brand-100 px-3 py-1 text-xs font-bold text-brand-800">
+                <span className="bg-brand-100 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-brand-800">
                   {statusLabels[vehicle.status]}
                 </span>
                 {vehicle.featured && (
-                  <span className="rounded-full bg-silver-200 px-3 py-1 text-xs font-bold text-brand-950">Destaque</span>
+                  <span className="bg-silver-200 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-brand-950">Destaque</span>
                 )}
               </div>
 
               <p className="mt-6 text-sm font-bold uppercase tracking-[0.2em] text-brand-600">{vehicle.brand}</p>
-              <h1 className="mt-2 text-3xl font-black tracking-tight text-brand-950 sm:text-4xl">{vehicle.model}</h1>
+              <h1 className="mt-2 text-4xl font-black tracking-[-0.04em] text-brand-950 sm:text-5xl">{vehicle.model}</h1>
               {vehicle.version && <p className="mt-2 text-base text-slate-500">{vehicle.version}</p>}
-              <p className="mt-7 text-3xl font-black text-brand-800">{formatPrice(vehicle.price)}</p>
+              <p className="mt-8 text-3xl font-black tracking-[-0.025em] text-brand-800">{formatPrice(vehicle.price)}</p>
 
-              <dl className="mt-7 grid grid-cols-2 gap-3">
+              <dl className="mt-8 grid grid-cols-2 gap-x-6">
                 <DetailItem label="Ano" value={vehicle.year} />
                 <DetailItem label="Ano modelo" value={vehicle.modelYear ?? vehicle.year} />
                 <DetailItem label="Quilometragem" value={formatMileage(vehicle.mileage)} />
@@ -97,21 +97,15 @@ export function VehicleDetailsPage() {
                 {vehicle.doors && <DetailItem label="Portas" value={vehicle.doors} />}
               </dl>
 
-              <div className="mt-7 space-y-3">
+              <div className="mt-7">
                 <WhatsAppButton vehicle={vehicle} />
-                <Link
-                  className="flex w-full items-center justify-center rounded-xl border border-brand-300 px-5 py-3.5 text-sm font-bold text-brand-800 transition hover:bg-brand-50"
-                  to="/contato"
-                >
-                  Entrar em contato
-                </Link>
               </div>
             </div>
           </aside>
         </div>
 
-        <div className="mt-10 grid gap-8 lg:grid-cols-2">
-          <section className="rounded-3xl border border-brand-100 bg-white p-6 sm:p-8">
+        <div className="mt-16 grid gap-12 border-t border-brand-200 pt-12 lg:grid-cols-2 lg:gap-20">
+          <section>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-600">Sobre o veículo</p>
             <h2 className="mt-2 text-2xl font-black text-brand-950">Descrição</h2>
             <p className="mt-5 whitespace-pre-line leading-7 text-slate-600">
@@ -119,7 +113,7 @@ export function VehicleDetailsPage() {
             </p>
           </section>
 
-          <section className="rounded-3xl border border-brand-100 bg-white p-6 sm:p-8">
+          <section>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-600">Conforto e segurança</p>
             <h2 className="mt-2 text-2xl font-black text-brand-950">Opcionais</h2>
             {vehicle.features.length > 0 ? (

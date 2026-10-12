@@ -13,7 +13,7 @@ export function BrandLogo({ className = '' }: BrandLogoProps) {
     >
       <img
         alt=""
-        className="absolute left-0 top-0 w-24 max-w-none -translate-y-[54px] sm:w-32 sm:-translate-y-[72px]"
+        className="brand-logo-image absolute left-0 top-0 max-w-none"
         src={logoImage}
       />
     </span>

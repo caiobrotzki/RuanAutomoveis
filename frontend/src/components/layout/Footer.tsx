@@ -13,11 +13,11 @@ interface FooterSectionProps {
 
 function FooterSection({ icon, title, children }: FooterSectionProps) {
   return (
-    <section className="flex items-start gap-3">
-      <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-brand-100 text-brand-800" aria-hidden="true">{icon}</span>
+    <section className="flex items-start gap-4">
+      <span className="mt-0.5 grid size-6 shrink-0 place-items-center text-brand-700" aria-hidden="true">{icon}</span>
       <div>
-        <h2 className="font-black text-brand-950">{title}</h2>
-        <div className="mt-2 space-y-1.5 text-sm leading-6 text-brand-700">{children}</div>
+        <h2 className="text-xs font-bold uppercase tracking-[0.14em] text-brand-950">{title}</h2>
+        <div className="mt-4 space-y-1.5 text-sm leading-6 text-brand-700">{children}</div>
       </div>
     </section>
   );
@@ -37,8 +37,8 @@ function InstagramIcon() {
 
 export function Footer() {
   return (
-    <footer className="border-t border-brand-100 bg-ivory-100 text-brand-700">
-      <div className="mx-auto grid max-w-7xl gap-7 px-5 py-8 sm:grid-cols-2 sm:gap-9 sm:px-8 sm:py-10 lg:grid-cols-[1.1fr_1.6fr_1fr_1fr] lg:gap-12 lg:py-12">
+    <footer className="border-t border-brand-200 bg-ivory-50 text-brand-700">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:grid-cols-2 sm:px-8 sm:py-16 lg:grid-cols-[1.1fr_1.6fr_1fr_1fr] lg:gap-12 lg:py-20">
         <div>
           <BrandLogo />
         </div>
@@ -61,7 +61,7 @@ export function Footer() {
         </FooterSection>
       </div>
 
-      <div className="border-t border-brand-100">
+      <div className="border-t border-brand-200">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-5 text-xs text-brand-600 sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <p>© {new Date().getFullYear()} Ruan Automóveis. Todos os direitos reservados.</p>
           <p>Jaraguá do Sul – SC</p>

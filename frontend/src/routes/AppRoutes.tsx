@@ -9,6 +9,8 @@ import { VehicleStockPage } from '../features/vehicles/pages/VehicleStockPage';
 import { AdminLayout } from '../layouts/AdminLayout';
 import { PublicLayout } from '../layouts/PublicLayout';
 import { HomePage } from '../pages/HomePage';
+import { AboutPage } from '../pages/AboutPage';
+import { ContactPage } from '../pages/ContactPage';
 import { PlaceholderPage } from '../pages/PlaceholderPage';
 import { ProtectedRoute } from './ProtectedRoute';
 
@@ -19,7 +21,8 @@ export function AppRoutes() {
         <Route index element={<HomePage />} />
         <Route path="estoque" element={<VehicleStockPage />} />
         <Route path="veiculos/:id" element={<VehicleDetailsPage />} />
-        <Route path="contato" element={<PlaceholderPage title="Fale conosco" />} />
+        <Route path="sobre" element={<AboutPage />} />
+        <Route path="contato" element={<ContactPage />} />
         <Route path="*" element={<PlaceholderPage title="Página não encontrada" />} />
       </Route>
       <Route path="admin" element={<AdminLoginPage />} />
